@@ -1,6 +1,0 @@
--Xlint
--d
-/tmp/vim-syntastic-3944-bWSDZkRc
--cp
-/home/phi/.m2/repository/org/openjfx/javafx-graphics/11/javafx-graphics-11.jar:/home/phi/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/phi/.m2/repository/org/openjfx/javafx-base/11/javafx-base-11.jar:/home/phi/.m2/repository/org/openjfx/javafx-base/11/javafx-base-11-linux.jar:/home/phi/.m2/repository/org/openjfx/javafx-controls/11/javafx-controls-11-linux.jar:/home/phi/.m2/repository/org/openjfx/javafx-controls/11/javafx-controls-11.jar:/home/phi/.m2/repository/org/openjfx/javafx-graphics/11/javafx-graphics-11-linux.jar:/home/phi/Documents/UFCA/OOP/petshop/target/classes:/home/phi/Documents/UFCA/OOP/petshop/target/test-classes
-/home/phi/Documents/UFCA/OOP/petshop/src/main/java/petshop/sistema/MenuAnimal.java
