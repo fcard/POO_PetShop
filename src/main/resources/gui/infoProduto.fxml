@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<Scene xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="petshop.gui.InfoProduto">
+    <AnchorPane prefHeight="406.0" prefWidth="659.0">
+      <children>
+         <Label layoutX="16.0" layoutY="89.0" text="Nome" />
+         <Label layoutX="17.0" layoutY="55.0" text="Categoria" />
+         <Label layoutX="14.0" layoutY="14.0" text="Animal">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Label>
+         <Separator layoutY="218.0" prefHeight="7.0" prefWidth="658.0" />
+         <Label layoutX="14.0" layoutY="232.0" text="Outros Dados">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Label>
+         <Label layoutX="16.0" layoutY="124.0" text="Area" />
+         <Label layoutX="16.0" layoutY="162.0" text="Peso" />
+         <Label layoutX="347.0" layoutY="55.0" text="Preço/Venda" />
+         <Label layoutX="336.0" layoutY="89.0" text="Preço/Compra" />
+         <Label layoutX="366.0" layoutY="124.0" text="Desconto" />
+         <TextField fx:id="categoria" editable="false" layoutX="86.0" layoutY="51.0" />
+         <TextField fx:id="nome" editable="false" layoutX="86.0" layoutY="85.0" />
+         <TextField fx:id="area" editable="false" layoutX="86.0" layoutY="120.0" />
+         <TextField fx:id="peso" editable="false" layoutX="86.0" layoutY="158.0" />
+         <TextField fx:id="venda" editable="false" layoutX="446.0" layoutY="51.0" />
+         <TextField fx:id="compra" editable="false" layoutX="446.0" layoutY="85.0" />
+         <TextField fx:id="desconto" editable="false" layoutX="446.0" layoutY="120.0" />
+         <Label layoutX="25.0" layoutY="274.0" text="Qtd." />
+         <Label layoutX="23.0" layoutY="318.0" text="Data" />
+         <Label layoutX="344.0" layoutY="274.0" text="Funcionario" />
+         <TextField fx:id="quantidade" editable="false" layoutX="86.0" layoutY="270.0" />
+         <TextField fx:id="data" editable="false" layoutX="86.0" layoutY="314.0" />
+         <TextField fx:id="funcionario" editable="false" layoutX="446.0" layoutY="270.0" />
+      </children></AnchorPane>
+</Scene>

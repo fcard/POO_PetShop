@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Scene xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="petshop.gui.Desconto">
+    <AnchorPane prefHeight="174.0" prefWidth="198.0">
+      <children>
+         <Spinner fx:id="quantidade" editable="true" layoutX="15.0" layoutY="60.0" />
+         <Label layoutX="57.0" layoutY="36.0" text="Porcento (%)" />
+         <Button layoutX="15.0" layoutY="138.0" mnemonicParsing="false" onAction="#confirmar" text="Confirmar" />
+         <Button layoutX="111.0" layoutY="138.0" mnemonicParsing="false" onAction="#fechar" text="Cancelar" />
+         <Slider fx:id="slider" blockIncrement="1.0" layoutX="31.0" layoutY="95.0" />
+      </children></AnchorPane>
+</Scene>

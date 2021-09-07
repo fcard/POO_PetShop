@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Scene xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="petshop.gui.GuiControlador">
+    <AnchorPane prefHeight="200" prefWidth="200">
+      <children>
+         <VBox prefHeight="505.0" prefWidth="777.0">
+            <children>
+               <MenuBar prefHeight="20.0" prefWidth="640.0" VBox.vgrow="NEVER">
+                  <menus>
+                     <Menu mnemonicParsing="false" text="File">
+                        <items>
+                           <MenuItem mnemonicParsing="false" text="New" />
+                           <MenuItem mnemonicParsing="false" text="Open…" />
+                           <Menu mnemonicParsing="false" text="Open Recent" />
+                           <SeparatorMenuItem mnemonicParsing="false" />
+                           <MenuItem mnemonicParsing="false" text="Close" />
+                           <MenuItem mnemonicParsing="false" text="Save" />
+                           <MenuItem mnemonicParsing="false" text="Save As…" />
+                           <MenuItem mnemonicParsing="false" text="Revert" />
+                           <SeparatorMenuItem mnemonicParsing="false" />
+                           <MenuItem mnemonicParsing="false" text="Preferences…" />
+                           <SeparatorMenuItem mnemonicParsing="false" />
+                           <MenuItem mnemonicParsing="false" text="Quit" />
+                        </items>
+                     </Menu>
+                     <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                           <MenuItem mnemonicParsing="false" text="Undo" />
+                           <MenuItem mnemonicParsing="false" text="Redo" />
+                           <SeparatorMenuItem mnemonicParsing="false" />
+                           <MenuItem mnemonicParsing="false" text="Cut" />
+                           <MenuItem mnemonicParsing="false" text="Copy" />
+                           <MenuItem mnemonicParsing="false" text="Paste" />
+                           <MenuItem mnemonicParsing="false" text="Delete" />
+                           <SeparatorMenuItem mnemonicParsing="false" />
+                           <MenuItem mnemonicParsing="false" text="Select All" />
+                           <MenuItem mnemonicParsing="false" text="Unselect All" />
+                        </items>
+                     </Menu>
+                     <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                           <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                        </items>
+                     </Menu>
+                  </menus>
+               </MenuBar>
+               <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+                  <children>
+                     <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </Label>
+                     <TabPane layoutX="-2.0" prefHeight="478.0" prefWidth="774.0" tabClosingPolicy="UNAVAILABLE">
+                        <tabs>
+                           <Tab fx:id="animaisAba" onSelectionChanged="#animaisAbaMudada" text="Animais">
+                              <content>
+                                 <SplitPane dividerPositions="0.5055928411633109" orientation="VERTICAL" prefHeight="450.0" prefWidth="774.0">
+                                    <items>
+                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="638.0">
+                                          <children>
+                                             <SplitPane dividerPositions="0.5" layoutY="-5.0" prefHeight="221.0" prefWidth="774.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <items>
+                                                   <AnchorPane>
+                                                      <children>
+                                                         <Button id="animaisButtonRegistrar" fx:id="animaisButtonRegistrar" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#registrarAnimal" prefHeight="35.0" prefWidth="326.0" text="Registrar" />
+                                                         <Button id="animaisButtonReservar" fx:id="animaisButtonReservar" layoutX="14.0" layoutY="55.0" mnemonicParsing="false" onAction="#reservarAnimal" prefHeight="35.0" prefWidth="326.0" text="Reservar" />
+                                                         <Button id="animaisButtonTerminar" fx:id="animaisButtonTerminar" layoutX="14.0" layoutY="99.0" mnemonicParsing="false" onAction="#terminarAdocao" prefHeight="35.0" prefWidth="326.0" text="Terminar Adoção" />
+                                                         <Label layoutX="14.0" layoutY="188.0" text="Pesquisa" />
+                                                         <TextField id="animaisPesquisa" fx:id="animaisPesquisa" layoutX="80.0" layoutY="184.0" prefHeight="24.0" prefWidth="241.0" />
+                                                         <Button fx:id="animaisButtonPesquisar" layoutX="328.0" layoutY="184.0" mnemonicParsing="false" onAction="#animaisPesquisar" prefHeight="24.0" prefWidth="37.0" text="🔍" />
+                                                      </children>
+                                                   </AnchorPane>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="209.0" prefWidth="369.0">
+                                                      <children>
+                                                         <TabPane prefHeight="223.0" prefWidth="383.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <tabs>
+                                                               <Tab fx:id="animaisAbaLivres" onSelectionChanged="#animaisLivresAbaMudada" text="Livres">
+                                                                  <content>
+                                                                     <AnchorPane>
+                                                                        <children>
+                                                                           <ScrollPane layoutY="-1.0">
+                                                                              <content>
+                                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="206.0" prefWidth="377.0">
+                                                                                    <children>
+                                                                                       <ListView id="animaisListaLivres" fx:id="animaisListaLivres" layoutY="-14.0" onMouseClicked="#selecionarAnimal" prefHeight="206.0" prefWidth="377.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                    </children>
+                                                                                 </AnchorPane>
+                                                                              </content>
+                                                                           </ScrollPane>
+                                                                        </children>
+                                                                     </AnchorPane>
+                                                                  </content>
+                                                               </Tab>
+                                                               <Tab fx:id="animaisAbaReservados" onSelectionChanged="#animaisReservadosAbaMudada" text="Reservados">
+                                                                  <content>
+                                                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                        <children>
+                                                                           <ScrollPane layoutY="-1.0" prefHeight="203.0" prefWidth="385.0">
+                                                                              <content>
+                                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="198.0" prefWidth="374.0">
+                                                                                    <children>
+                                                                                       <ListView id="animaisListaReservados" fx:id="animaisListaReservados" onMouseClicked="#selecionarAnimal" prefHeight="199.0" prefWidth="378.0" />
+                                                                                    </children>
+                                                                                 </AnchorPane>
+                                                                              </content>
+                                                                           </ScrollPane>
+                                                                        </children>
+                                                                     </AnchorPane>
+                                                                  </content>
+                                                               </Tab>
+                                                            </tabs>
+                                                         </TabPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </items>
+                                             </SplitPane>
+                                          </children>
+                                       </AnchorPane>
+                                       <AnchorPane minHeight="0.0" minWidth="0.0">
+                                          <children>
+                                             <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="220.0" prefWidth="774.0">
+                                                <content>
+                                                   <AnchorPane maxHeight="400.0" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="786.0">
+                                                      <children>
+                                                         <Label layoutX="14.0" layoutY="12.0" prefHeight="34.0" prefWidth="136.0" text="Informaçoes">
+                                                            <font>
+                                                               <Font size="19.0" />
+                                                            </font>
+                                                         </Label>
+                                                         <Label layoutX="14.0" layoutY="57.0" text="Especie" />
+                                                         <TextField id="animaisInfoEspecie" fx:id="animaisInfoEspecie" editable="false" layoutX="82.0" layoutY="53.0" />
+                                                         <Label layoutX="14.0" layoutY="91.0" text="Nome" />
+                                                         <TextField id="animaisInfoNome" fx:id="animaisInfoNome" editable="false" layoutX="82.0" layoutY="87.0" />
+                                                         <Label layoutX="15.0" layoutY="125.0" text="Idade" />
+                                                         <TextField id="animaisInfoIdade" fx:id="animaisInfoIdade" editable="false" layoutX="82.0" layoutY="121.0" />
+                                                         <TextField id="animaisInfoPeso" fx:id="animaisInfoPeso" editable="false" layoutX="82.0" layoutY="155.0" />
+                                                         <Label layoutX="15.0" layoutY="159.0" text="Peso" />
+                                                         <Label layoutX="450.0" layoutY="52.0" text="Altura" />
+                                                         <TextField id="animaisInfoAltura" fx:id="animaisInfoAltura" editable="false" layoutX="511.0" layoutY="48.0" />
+                                                         <Label layoutX="357.0" layoutY="83.0" text="Data de Nascimento" />
+                                                         <TextField id="animaisInfoData" fx:id="animaisInfoData" editable="false" layoutX="511.0" layoutY="82.0" />
+                                                         <Label layoutX="452.0" layoutY="125.0" text="Sexo" />
+                                                         <TextField id="animaisInfoSexo" fx:id="animaisInfoSexo" editable="false" layoutX="511.0" layoutY="121.0" />
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </ScrollPane>
+                                          </children>
+                                       </AnchorPane>
+                                    </items>
+                                 </SplitPane>
+                              </content>
+                           </Tab>
+                           <Tab fx:id="produtosAba" onSelectionChanged="#produtosAbaMudada" text="Produtos">
+                              <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                       <SplitPane dividerPositions="0.503370786516854" orientation="VERTICAL" prefHeight="447.0" prefWidth="774.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <items>
+                                             <SplitPane dividerPositions="0.5" prefHeight="225.0" prefWidth="774.0">
+                                                <items>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="211.0" prefWidth="403.0">
+                                                      <children>
+                                                         <Button id="produtosButtonRegistrar" fx:id="produtosButtonRegistrar" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#registrarProduto" prefHeight="35.0" prefWidth="326.0" text="Registrar" />
+                                                         <Button id="produtosButtonComprar" fx:id="produtosButtonComprar" layoutX="14.0" layoutY="55.0" mnemonicParsing="false" onAction="#comprarProduto" prefHeight="35.0" prefWidth="326.0" text="Comprar" />
+                                                         <Button id="produtosButtonVender" fx:id="produtosButtonVender" layoutX="14.0" layoutY="99.0" mnemonicParsing="false" onAction="#venderProduto" prefHeight="35.0" prefWidth="326.0" text="Vender" />
+                                                         <Button id="produtosButtonDescontos" fx:id="produtosButtonDescontos" layoutX="14.0" layoutY="142.0" mnemonicParsing="false" onAction="#descontarProduto" prefHeight="35.0" prefWidth="326.0" text="Descontar" />
+                                                         <Label layoutX="14.0" layoutY="188.0" text="Pesquisa" />
+                                                         <TextField id="produtosPesquisa" fx:id="produtosPesquisa" layoutX="80.0" layoutY="184.0" prefHeight="24.0" prefWidth="241.0" />
+                                                         <Button layoutX="328.0" layoutY="184.0" mnemonicParsing="false" onAction="#produtosPesquisar" prefHeight="24.0" prefWidth="37.0" text="🔍" />
+                                                      </children>
+                                                   </AnchorPane>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="209.0" prefWidth="369.0">
+                                                      <children>
+                                                         <TabPane prefHeight="221.0" prefWidth="383.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <tabs>
+                                                               <Tab fx:id="produtosAbaComida" onSelectionChanged="#abaComidaMudada" text="Comida">
+                                                                  <content>
+                                                                     <AnchorPane>
+                                                                        <children>
+                                                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="190.0" prefWidth="383.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                              <children>
+                                                                                 <ScrollPane>
+                                                                                    <content>
+                                                                                       <AnchorPane prefHeight="189.0" prefWidth="385.0">
+                                                                                          <children>
+                                                                                             <ListView fx:id="produtosListaComida" layoutX="57.0" layoutY="7.0" onMouseClicked="#selecionarProduto" prefHeight="189.0" prefWidth="385.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                          </children>
+                                                                                       </AnchorPane>
+                                                                                    </content>
+                                                                                 </ScrollPane>
+                                                                              </children>
+                                                                           </AnchorPane>
+                                                                        </children>
+                                                                     </AnchorPane>
+                                                                  </content>
+                                                               </Tab>
+                                                               <Tab fx:id="produtosAbaBrinquedos" onSelectionChanged="#abaBrinquedosMudada" text="Brinquedos">
+                                                                  <content>
+                                                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                        <children>
+                                                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="190.0" prefWidth="383.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                              <children>
+                                                                                 <ScrollPane>
+                                                                                    <content>
+                                                                                       <AnchorPane prefHeight="189.0" prefWidth="385.0">
+                                                                                          <children>
+                                                                                             <ListView fx:id="produtosListaBrinquedos" layoutX="57.0" layoutY="7.0" onMouseClicked="#selecionarProduto" prefHeight="189.0" prefWidth="385.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                          </children>
+                                                                                       </AnchorPane>
+                                                                                    </content>
+                                                                                 </ScrollPane>
+                                                                              </children>
+                                                                           </AnchorPane>
+                                                                        </children>
+                                                                     </AnchorPane>
+                                                                  </content>
+                                                               </Tab>
+                                                               <Tab fx:id="produtosAbaRemedios" onSelectionChanged="#abaRemediosMudada" text="Remedios">
+                                                                  <content>
+                                                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                        <children>
+                                                                           <ScrollPane>
+                                                                              <content>
+                                                                                 <AnchorPane prefHeight="189.0" prefWidth="385.0">
+                                                                                    <children>
+                                                                                       <ListView fx:id="produtosListaRemedios" layoutX="57.0" layoutY="7.0" onMouseClicked="#selecionarProduto" prefHeight="189.0" prefWidth="385.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                    </children>
+                                                                                 </AnchorPane>
+                                                                              </content>
+                                                                           </ScrollPane>
+                                                                        </children>
+                                                                     </AnchorPane>
+                                                                  </content>
+                                                               </Tab>
+                                                            </tabs>
+                                                         </TabPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </items>
+                                             </SplitPane>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                <children>
+                                                   <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="220.0" prefWidth="774.0">
+                                                      <content>
+                                                         <AnchorPane maxHeight="400.0" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="786.0">
+                                                            <children>
+                                                               <Label layoutX="13.0" layoutY="13.0" prefHeight="34.0" prefWidth="136.0" text="Informaçoes">
+                                                                  <font>
+                                                                     <Font size="19.0" />
+                                                                  </font>
+                                                               </Label>
+                                                               <Label layoutX="13.0" layoutY="58.0" text="Categoria" />
+                                                               <TextField id="produtosInfoCategoria" fx:id="produtosInfoCategoria" editable="false" layoutX="81.0" layoutY="54.0" />
+                                                               <Label layoutX="13.0" layoutY="92.0" text="Nome" />
+                                                               <TextField id="produtosInfoNome" fx:id="produtosInfoNome" editable="false" layoutX="81.0" layoutY="88.0" />
+                                                               <Label layoutX="14.0" layoutY="126.0" text="Area" />
+                                                               <TextField id="produtosInfoArea" fx:id="produtosInfoArea" editable="false" layoutX="81.0" layoutY="122.0" />
+                                                               <TextField id="produtosInfoPeso" fx:id="produtosInfoPeso" editable="false" layoutX="81.0" layoutY="156.0" />
+                                                               <Label layoutX="14.0" layoutY="160.0" text="Peso" />
+                                                               <Label layoutX="395.0" layoutY="53.0" prefHeight="16.0" prefWidth="146.0" text="Preço/Compra" />
+                                                               <TextField id="produtosInfoCompra" fx:id="produtosInfoCompra" editable="false" layoutX="510.0" layoutY="49.0" />
+                                                               <Label layoutX="402.0" layoutY="87.0" text="Preço/venda" />
+                                                               <TextField id="produtosInfoVenda" fx:id="produtosInfoVenda" editable="false" layoutX="510.0" layoutY="83.0" />
+                                                               <Label layoutX="380.0" layoutY="160.0" text="Criterios de Uso" />
+                                                               <Button layoutX="510.0" layoutY="156.0" mnemonicParsing="false" onAction="#checarCriterios" text="checar" />
+                                                               <Label layoutX="432.0" layoutY="126.0" text="Estoque" />
+                                                               <TextField id="produtosInfoArea" fx:id="produtosInfoEstoque" editable="false" layoutX="510.0" layoutY="122.0" />
+                                                            </children>
+                                                         </AnchorPane>
+                                                      </content>
+                                                   </ScrollPane>
+                                                </children>
+                                             </AnchorPane>
+                                          </items>
+                                       </SplitPane>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </Tab>
+                           <Tab fx:id="dinheiroAba" onSelectionChanged="#dinheiroAbaMudada" text="Dinheiro">
+                              <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="276.0" prefWidth="772.0" />
+                                       <SplitPane dividerPositions="0.5056179775280899" orientation="VERTICAL" prefHeight="447.0" prefWidth="774.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <items>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                <children>
+                                                   <Button id="dinheiroButtonAdc" fx:id="dinheiroButtonAdc" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#adicionarSemDebito" prefHeight="35.0" prefWidth="326.0" text="Adicionar Sem Debito" />
+                                                   <Button id="dinheiroButtonAdcDebito" fx:id="dinheiroButtonAdcDebito" layoutX="14.0" layoutY="55.0" mnemonicParsing="false" onAction="#adicionarComDebito" prefHeight="35.0" prefWidth="326.0" text="Adicionar Com Debito" />
+                                                   <Button id="dinheiroButtonRemover" fx:id="dinheiroButtonRemover" layoutX="14.0" layoutY="99.0" mnemonicParsing="false" onAction="#removerDinheiro" prefHeight="35.0" prefWidth="326.0" text="Remover" />
+                                                   <Button id="dinheiroButtonPagar" fx:id="dinheiroButtonPagar" layoutX="14.0" layoutY="142.0" mnemonicParsing="false" onAction="#pagarDebito" prefHeight="35.0" prefWidth="326.0" text="Pagar Debito" />
+                                                </children>
+                                             </AnchorPane>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                <children>
+                                                   <Label layoutX="14.0" layoutY="13.0" prefHeight="34.0" prefWidth="136.0" text="Informaçoes">
+                                                      <font>
+                                                         <Font size="19.0" />
+                                                      </font>
+                                                   </Label>
+                                                   <Label layoutX="15.0" layoutY="58.0" text="Dinheiro" />
+                                                   <TextField id="dinheiroInfoDinheiro" fx:id="dinheiroInfoDinheiro" editable="false" layoutX="82.0" layoutY="54.0" />
+                                                   <Label layoutX="15.0" layoutY="92.0" text="Debito" />
+                                                   <TextField id="dinheiroInfoDebito" fx:id="dinheiroInfoDebito" editable="false" layoutX="82.0" layoutY="88.0" />
+                                                </children>
+                                             </AnchorPane>
+                                          </items>
+                                       </SplitPane>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </Tab>
+                           <Tab id="empregadosAba" fx:id="empregadosAba" onSelectionChanged="#empregadosAbaMudada" text="Empregados">
+                              <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="450.0" prefWidth="774.0">
+                                          <items>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="638.0">
+                                                <children>
+                                                   <SplitPane dividerPositions="0.5" layoutY="-5.0" prefHeight="221.0" prefWidth="772.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <items>
+                                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="238.0" prefWidth="408.0">
+                                                            <children>
+                                                               <Button id="empregadosButtonRegistrar" fx:id="empregadosButtonRegistrar" layoutX="13.0" layoutY="11.0" mnemonicParsing="false" onAction="#registrarEmpregado" prefHeight="35.0" prefWidth="326.0" text="Registrar" />
+                                                               <Button id="empregadosButtonLogin" fx:id="empregadosButtonLogin" layoutX="13.0" layoutY="54.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="326.0" text="Login" />
+                                                               <Button id="empregadosButtonAtualizar" fx:id="empregadosButtonAtualizar" layoutX="13.0" layoutY="98.0" mnemonicParsing="false" onAction="#atualizarEmpregado" prefHeight="35.0" prefWidth="326.0" text="Atualizar" />
+                                                               <Button id="empregadosButtonRemover" fx:id="empregadosButtonRemover" layoutX="13.0" layoutY="141.0" mnemonicParsing="false" onAction="#removerEmpregado" prefHeight="35.0" prefWidth="326.0" text="Remover" />
+                                                               <Label layoutX="13.0" layoutY="187.0" text="Pesquisa" />
+                                                               <TextField id="empregadosPesquisa" fx:id="empregadosPesquisa" layoutX="79.0" layoutY="183.0" prefHeight="24.0" prefWidth="241.0" />
+                                                               <Button layoutX="327.0" layoutY="183.0" mnemonicParsing="false" onAction="#empregadosPesquisar" prefHeight="24.0" prefWidth="37.0" text="🔍" />
+                                                            </children>
+                                                         </AnchorPane>
+                                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="209.0" prefWidth="369.0">
+                                                            <children>
+                                                               <ScrollPane>
+                                                                  <content>
+                                                                     <AnchorPane>
+                                                                        <children>
+                                                                           <ListView id="empregadosLista" fx:id="empregadosLista" editable="true" layoutY="2.0" onMouseClicked="#selecionarEmpregado" prefHeight="216.0" prefWidth="378.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0" />
+                                                                        </children>
+                                                                     </AnchorPane>
+                                                                  </content>
+                                                               </ScrollPane>
+                                                            </children>
+                                                         </AnchorPane>
+                                                      </items>
+                                                   </SplitPane>
+                                                </children>
+                                             </AnchorPane>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                <children>
+                                                   <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="220.0" prefWidth="774.0">
+                                                      <content>
+                                                         <AnchorPane maxHeight="400.0" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="786.0">
+                                                            <children>
+                                                               <Label layoutX="13.0" layoutY="13.0" prefHeight="34.0" prefWidth="136.0" text="Informaçoes">
+                                                                  <font>
+                                                                     <Font size="19.0" />
+                                                                  </font>
+                                                               </Label>
+                                                               <Label layoutX="13.0" layoutY="58.0" text="Apelido" />
+                                                               <TextField id="empregadosInfoApelido" fx:id="empregadosInfoApelido" editable="false" layoutX="81.0" layoutY="54.0" />
+                                                               <Label layoutX="13.0" layoutY="92.0" text="Nome" />
+                                                               <TextField id="empregadosInfoNome" fx:id="empregadosInfoNome" editable="false" layoutX="81.0" layoutY="88.0" />
+                                                               <Label layoutX="14.0" layoutY="126.0" text="Email" />
+                                                               <TextField id="empregadosInfoEmail" fx:id="empregadosInfoEmail" editable="false" layoutX="81.0" layoutY="122.0" />
+                                                               <Label layoutX="418.0" layoutY="50.0" text="Privilegios" />
+                                                               <TextField id="empregadosInfoPrivilegios" fx:id="empregadosInfoPrivilegios" editable="false" layoutX="510.0" layoutY="49.0" />
+                                                            </children>
+                                                         </AnchorPane>
+                                                      </content>
+                                                   </ScrollPane>
+                                                </children>
+                                             </AnchorPane>
+                                          </items>
+                                       </SplitPane>
+                                    </children>
+                                 </AnchorPane>
+                              </content>
+                           </Tab>
+                           <Tab fx:id="historicoAba" onSelectionChanged="#historicoAbaMudada" text="Historico">
+                             <content>
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                       <SplitPane dividerPositions="0.503370786516854" orientation="VERTICAL" prefHeight="447.0" prefWidth="774.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <items>
+                                             <SplitPane dividerPositions="0.5" prefHeight="225.0" prefWidth="774.0">
+                                                <items>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="211.0" prefWidth="403.0">
+                                                      <children>
+                                                         <Button id="produtosButtonRegistrar" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#removerHistorico" prefHeight="35.0" prefWidth="326.0" text="Remover" />
+                                                         <Button id="produtosButtonComprar" layoutX="14.0" layoutY="55.0" mnemonicParsing="false" onAction="#maisInfo" prefHeight="35.0" prefWidth="326.0" text="Mais Informaçoes" />
+                                                         <Label layoutX="14.0" layoutY="188.0" text="Pesquisa" />
+                                                         <TextField id="produtosPesquisa" fx:id="historicoPesquisa" layoutX="80.0" layoutY="184.0" prefHeight="24.0" prefWidth="241.0" />
+                                                         <Button layoutX="328.0" layoutY="184.0" mnemonicParsing="false" onAction="#historicoPesquisar" prefHeight="24.0" prefWidth="37.0" text="🔍" />
+                                                      </children>
+                                                   </AnchorPane>
+                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="209.0" prefWidth="369.0">
+                                                      <children>
+                                                         <TabPane prefHeight="221.0" prefWidth="383.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <tabs>
+                                                               <Tab fx:id="historicoAbaAnimais" onSelectionChanged="#abaHistoricoAnimaisMudada" text="Animais">
+                                                                  <content>
+                                                                     <AnchorPane>
+                                                                        <children>
+                                                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="190.0" prefWidth="383.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                              <children>
+                                                                                 <ScrollPane>
+                                                                                    <content>
+                                                                                       <AnchorPane prefHeight="189.0" prefWidth="385.0">
+                                                                                          <children>
+                                                                                             <ListView fx:id="historicoListaAnimais" layoutX="57.0" layoutY="7.0" onMouseClicked="#selecionarHistorico" prefHeight="189.0" prefWidth="385.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                          </children>
+                                                                                       </AnchorPane>
+                                                                                    </content>
+                                                                                 </ScrollPane>
+                                                                              </children>
+                                                                           </AnchorPane>
+                                                                        </children>
+                                                                     </AnchorPane>
+                                                                  </content>
+                                                               </Tab>
+                                                               <Tab fx:id="historicoAbaProdutos" onSelectionChanged="#abaHistoricoProdutosMudada" text="Produtos">
+                                                                  <content>
+                                                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                        <children>
+                                                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="190.0" prefWidth="383.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                              <children>
+                                                                                 <ScrollPane>
+                                                                                    <content>
+                                                                                       <AnchorPane prefHeight="189.0" prefWidth="385.0">
+                                                                                          <children>
+                                                                                             <ListView fx:id="historicoListaProdutos" layoutX="57.0" layoutY="7.0" onMouseClicked="#selecionarHistorico" prefHeight="189.0" prefWidth="385.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                          </children>
+                                                                                       </AnchorPane>
+                                                                                    </content>
+                                                                                 </ScrollPane>
+                                                                              </children>
+                                                                           </AnchorPane>
+                                                                        </children>
+                                                                     </AnchorPane>
+                                                                  </content>
+                                                               </Tab>
+                                                            </tabs>
+                                                         </TabPane>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </items>
+                                             </SplitPane>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                <children>
+                                                   <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="220.0" prefWidth="774.0">
+                                                      <content>
+                                                         <AnchorPane maxHeight="400.0" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="786.0">
+                                                            <children>
+                                                               <Label layoutX="13.0" layoutY="13.0" prefHeight="34.0" prefWidth="136.0" text="Informaçoes">
+                                                                  <font>
+                                                                     <Font size="19.0" />
+                                                                  </font>
+                                                               </Label>
+                                                               <Label layoutX="13.0" layoutY="58.0" text="Data" />
+                                                               <TextField id="produtosInfoCategoria" fx:id="historicoInfoData" editable="false" layoutX="81.0" layoutY="54.0" />
+                                                               <Label layoutX="13.0" layoutY="92.0" text="Id" />
+                                                               <TextField id="produtosInfoNome" fx:id="historicoInfoId" editable="false" layoutX="81.0" layoutY="88.0" />
+                                                               <Label layoutX="410.0" layoutY="53.0" prefHeight="16.0" prefWidth="146.0" text="Empregado" />
+                                                               <TextField id="produtosInfoCompra" fx:id="historicoInfoEmpregado" editable="false" layoutX="510.0" layoutY="49.0" />
+                                                               <Label layoutX="402.0" layoutY="87.0" />
+                                                            </children>
+                                                         </AnchorPane>
+                                                      </content>
+                                                   </ScrollPane>
+                                                </children>
+                                             </AnchorPane>
+                                          </items>
+                                       </SplitPane>
+                                    </children>
+                                 </AnchorPane>
+                             </content>
+                           </Tab>
+                        </tabs>
+                     </TabPane>
+                  </children>
+               </AnchorPane>
+            </children>
+         </VBox>
+      </children></AnchorPane>
+</Scene>
