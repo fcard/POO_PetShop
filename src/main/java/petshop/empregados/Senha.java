@@ -42,12 +42,15 @@ public class Senha {
   }
 
   static {
-    Io.mostrarErro(() -> {
+    try {
       var arquivoChave = new File(database.resolve("chave.data").toString());
       var scanner = new Scanner(arquivoChave);
       chave2 = scanner.nextInt();
       chave = chave1 + chave2;
-    });
+    } catch (Exception e) {
+      Io.mostrarErro(() -> Files.createDirectories(database));
+      chave = chave1;
+    }
   }
 
   public static String encriptar(String s) {
