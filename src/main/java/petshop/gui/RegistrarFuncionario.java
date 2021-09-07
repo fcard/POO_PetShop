@@ -74,6 +74,8 @@ public class RegistrarFuncionario {
 
   @FXML
   private void fechar() {
-    stage.close();
+    if (!adminObrigatorio) {
+      stage.close();
+    }
   }
 }

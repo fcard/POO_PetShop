@@ -754,6 +754,10 @@ public class GuiControlador {
             empregadoLogado = empregado;
           });
         };
+        janela.setOnCloseRequest(event -> {
+          event.consume();
+          janela.show();
+        });
         janela.setTitle("Registrar Admin");
         janela.show();
       } else {
